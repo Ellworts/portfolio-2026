@@ -1,0 +1,28 @@
+{
+  "name": "portfolio-2026",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.19.12",
+    "@radix-ui/react-accordion": "^1.2.20",
+    "@studio-freight/lenis": "^1.0.42",
+    "next": "16.2.11",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "swiper": "^11.1.14",
+    "vanilla-tilt": "^1.8.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "babel-plugin-react-compiler": "1.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.11",
+    "tailwindcss": "^4"
+  }
+}
