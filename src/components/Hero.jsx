@@ -1,11 +1,39 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import Image from "next/image";
 
 export default function Hero() {
+  const [isMeActive, setIsMeActive] = useState(false);
+  const avatarRef = useRef(null);
+
+  const handleMeClick = () => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) {
+      setIsMeActive(!isMeActive);
+    }
+  };
+
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      if (
+        isMeActive &&
+        avatarRef.current &&
+        !avatarRef.current.contains(event.target)
+      ) {
+        setIsMeActive(false);
+      }
+    };
+
+    document.addEventListener("click", handleOutsideClick);
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [isMeActive]);
+
   const techStack = [
     { name: "JavaScript", icon: "devicon-javascript-plain colored" },
     { name: "TypeScript", icon: "devicon-typescript-plain colored" },
@@ -111,6 +139,34 @@ export default function Hero() {
           loop
           autoplay
           style={{ width: 64, height: 64 }}
+        />
+      </div>
+      <div 
+        ref={avatarRef}
+        onClick={handleMeClick}
+        className={`absolute z-10 transition-all duration-500 group cursor-pointer md:cursor-default left-4 md:left-20 
+          ${isMeActive 
+            ? "bottom-0 translate-y-0 opacity-100 md:bottom-[max(-15vh,-150px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0" 
+            : "bottom-[max(-18vh,-130px)] translate-y-0 opacity-65 md:bottom-[max(-14vh,-115px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0"
+          }`}
+      >
+        <div className={`absolute border border-gray-600 bg-[#22333b]/95 text-white px-4 py-3 rounded-lg shadow-lg transition-opacity duration-300 pointer-events-none w-max
+          ${isMeActive 
+            ? "bottom-[105%] left-1/2 -translate-x-1/2 opacity-100 md:top-[15%] md:bottom-auto md:left-35 md:translate-x-0 md:opacity-0 md:group-hover:opacity-100" 
+            : "bottom-[105%] left-1/2 -translate-x-1/2 opacity-0 md:top-[15%] md:bottom-auto md:left-35 md:translate-x-0 md:opacity-0 md:group-hover:opacity-100"
+          }`}
+        >
+          <p className="text-sm font-medium">Hey! It&apos;s me ;)</p>
+          <div className="absolute bottom-0 left-1/2 md:left-4 transform translate-y-full -translate-x-1/2 md:translate-x-0">
+            <div className="border-8 border-transparent border-t-gray-600"></div>
+          </div>
+        </div> 
+        <Image
+          src="/me.webp"
+          alt="Mykhailo Kuptsov"
+          width={250}
+          height={250}
+          className="w-44 h-44 md:w-64 md:h-64 object-contain rounded-t-3xl transform translate-y-0 md:translate-y-[30%]"
         />
       </div>
     </section>

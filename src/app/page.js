@@ -4,13 +4,14 @@ import Hero from "@/components/Hero";
 import MyExpertise from "@/components/MyExpertise";
 import Projects from "@/components/Projects";
 import WorkExperience from "@/components/WorkExperience";
+import Contact from "@/components/Contact";
 import "../components/general.css";
 
 export default function Home() {
   return (
     <div className="min-h-screen">
       <Header />
-      <main className="flex flex-col gap-[100px] bg-[#22333B]">
+      <main className="flex flex-col bg-[#22333B]">
         <Hero />
         <MyExpertise />
         <Projects />

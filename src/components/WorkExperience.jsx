@@ -57,7 +57,7 @@ export default function WorkExperience() {
   };
 
   return (
-    <section id="experience">
+    <section id="experience" className="pt-[100px]">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10 w-full">
         <h2 className="mb-8 sm:mb-12 text-center text-6xl font-bold text-white">
           Work Experience

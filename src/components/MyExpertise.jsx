@@ -24,7 +24,7 @@ export default function MyExpertise() {
   ];
 
   return (
-    <section id="expertise">
+    <section id="expertise" className="pt-[100px]">
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
         <h2 className="text-6xl font-bold text-white mb-8 sm:mb-12 text-center">
           My Expertise
