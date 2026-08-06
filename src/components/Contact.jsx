@@ -127,91 +127,108 @@ export default function Contact() {
 
           {/* Right Column: Contact Form */}
           <div className="bg-[#22333B]/90 border border-white/5 p-8 rounded-2xl flex flex-col justify-center">
-            
-            {submitted ? (
-              <div className="bg-emerald-950/50 border border-emerald-500/50 text-emerald-400 p-6 rounded-lg text-center">
-                Message sent successfully! I will get back to you soon.
+            <form onSubmit={handleSubmit} className="space-y-6">
+              
+              {/* Error alert */}
+              {error && (
+                <div className="bg-rose-950/50 border border-rose-500/50 text-rose-400 p-4 rounded text-sm text-center">
+                  {error}
+                </div>
+              )}
+
+              {/* Underlined Name Field */}
+              <div className="flex flex-col border-b border-gray-700 focus-within:border-[#8CD6D0] transition-colors py-2">
+                <label htmlFor="name" className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">
+                  Name
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formState.name}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none text-white py-1 px-0 focus:outline-none focus:ring-0 text-sm placeholder-gray-400"
+                  placeholder="John Doe"
+                  disabled={loading}
+                />
               </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="space-y-6">
-                
-                {/* Error alert */}
-                {error && (
-                  <div className="bg-rose-950/50 border border-rose-500/50 text-rose-400 p-4 rounded text-sm text-center">
-                    {error}
-                  </div>
-                )}
 
-                {/* Underlined Name Field */}
-                <div className="flex flex-col border-b border-gray-700 focus-within:border-[#8CD6D0] transition-colors py-2">
-                  <label htmlFor="name" className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    value={formState.name}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-none text-white py-1 px-0 focus:outline-none focus:ring-0 text-sm placeholder-gray-400"
-                    placeholder="John Doe"
-                    disabled={loading}
-                  />
-                </div>
+              {/* Underlined Email Field */}
+              <div className="flex flex-col border-b border-gray-700 focus-within:border-[#8CD6D0] transition-colors py-2">
+                <label htmlFor="email" className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formState.email}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none text-white py-1 px-0 focus:outline-none focus:ring-0 text-sm placeholder-gray-400"
+                  placeholder="john@example.com"
+                  disabled={loading}
+                />
+              </div>
 
-                {/* Underlined Email Field */}
-                <div className="flex flex-col border-b border-gray-700 focus-within:border-[#8CD6D0] transition-colors py-2">
-                  <label htmlFor="email" className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    value={formState.email}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-none text-white py-1 px-0 focus:outline-none focus:ring-0 text-sm placeholder-gray-400"
-                    placeholder="john@example.com"
-                    disabled={loading}
-                  />
-                </div>
+              {/* Underlined Message Field */}
+              <div className="flex flex-col border-b border-gray-700 focus-within:border-[#8CD6D0] transition-colors py-2">
+                <label htmlFor="message" className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="3"
+                  value={formState.message}
+                  onChange={handleChange}
+                  className="w-full bg-transparent border-none text-white py-1 px-0 focus:outline-none focus:ring-0 text-sm resize-none placeholder-gray-400"
+                  placeholder="Drop me a message..."
+                  disabled={loading}
+                />
+              </div>
 
-                {/* Underlined Message Field */}
-                <div className="flex flex-col border-b border-gray-700 focus-within:border-[#8CD6D0] transition-colors py-2">
-                  <label htmlFor="message" className="text-gray-400 text-xs font-semibold uppercase tracking-wider mb-1">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows="3"
-                    value={formState.message}
-                    onChange={handleChange}
-                    className="w-full bg-transparent border-none text-white py-1 px-0 focus:outline-none focus:ring-0 text-sm resize-none placeholder-gray-400"
-                    placeholder="Drop me a message..."
-                    disabled={loading}
-                  />
-                </div>
-
-                {/* Left-aligned Submit Button */}
-                <div className="pt-2">
-                  <button
-                    type="submit"
-                    disabled={loading}
-                    className="bg-[#8CD6D0] hover:bg-[#7BC4BE] disabled:bg-gray-700 disabled:text-gray-400 text-[#12161A] font-bold px-8 py-3 rounded-lg text-sm transition-colors cursor-pointer"
-                  >
-                    {loading ? "Sending..." : "Submit"}
-                  </button>
-                </div>
-              </form>
-            )}
+              {/* Left-aligned Submit Button */}
+              <div className="pt-2">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="bg-[#8CD6D0] hover:bg-[#7BC4BE] disabled:bg-gray-700 disabled:text-gray-400 text-[#12161A] font-bold px-8 py-3 rounded-lg text-sm transition-colors cursor-pointer"
+                >
+                  {loading ? "Sending..." : "Submit"}
+                </button>
+              </div>
+            </form>
           </div>
           
         </div>
       </div>
+
+      {/* Floating Success Toast Popup */}
+      {submitted && (
+        <div className="toast-popup bg-emerald-950/95 border border-emerald-500/40 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 backdrop-blur-sm max-w-sm">
+          <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div className="flex-grow">
+            <h4 className="font-bold text-sm text-emerald-400">Success!</h4>
+            <p className="text-gray-300 text-xs mt-0.5">Your message was sent successfully.</p>
+          </div>
+          <button
+            onClick={() => setSubmitted(false)}
+            className="text-gray-400 hover:text-white transition-colors cursor-pointer p-1 ml-2 flex-shrink-0"
+            aria-label="Close notification"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
+      )}
     </section>
   );
 }
