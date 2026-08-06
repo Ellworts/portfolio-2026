@@ -5,99 +5,87 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
+const projects = [
+  {
+    title: "Global Education Hub",
+    image: "/global_study_uk/Global_education_hub.webp",
+    link: "https://globaleducationhub.com/",
+    description: "Comprehensive education platform for international students",
+  },
+  {
+    title: "Education247",
+    image: "/global_study_uk/education247.webp",
+    link: "https://education247.com/",
+    description: "Educational exhibition event website",
+  },
+  {
+    title: "Global Study Australia",
+    image: "/global_study_uk/globalstudyaustralia.webp",
+    link: "https://globalstudyaustralia.com/",
+    description: "Study abroad consultancy for Australian universities",
+  },
+  {
+    title: "Egypt Education Fair",
+    image: "/global_study_uk/egypt_education_fair.webp",
+    link: "https://egypteducationfair.com/",
+    description: "Educational exhibition event website",
+  },
+  {
+    title: "Study Business in Germany",
+    image: "/global_study_uk/study_business_in_germany.webp",
+    link: "https://studybusinessinGermany.com/",
+    description: "Business education programs in German universities",
+  },
+  {
+    title: "Study Economics UK",
+    image: "/global_study_uk/study_economics_UK.webp",
+    link: "https://studyeconomicsintheuk.com/",
+    description: "Economics programs in UK universities",
+  },
+  {
+    title: "UCAS Clearing",
+    image: "/global_study_uk/ucas_clearing.webp",
+    link: "https://ucasclearing.com/",
+    description: "University clearing process information portal",
+  },
+  {
+    title: "Universities in Madrid",
+    image: "/global_study_uk/universities_in_madrid.webp",
+    link: "https://universitiesinmadrid.com/",
+    description: "Higher education guide for Madrid institutions",
+  },
+  {
+    title: "Universities in Leeds",
+    image: "/global_study_uk/universitiesinleeds.webp",
+    link: "https://universitiesinleeds.com/",
+    description: "University guide for Leeds area institutions",
+  },
+];
+
+const PROJECTS_PER_PAGE = 6;
+const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
+
+const projectPages = [];
+for (let i = 0; i < projects.length; i += PROJECTS_PER_PAGE) {
+  projectPages.push(projects.slice(i, i + PROJECTS_PER_PAGE));
+}
+
+
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(0);
   const [mobileActiveIndex, setMobileActiveIndex] = useState(0);
   const swiperRef = useRef(null);
   const mobileSwiperRef = useRef(null);
 
-  const projects = [
-    {
-      title: "Global Education Hub",
-      image: "/global_study_uk/Global_education_hub.webp",
-      link: "https://globaleducationhub.com/",
-      description:
-        "Comprehensive education platform for international students",
-    },
-    {
-      title: "Education247",
-      image: "/global_study_uk/education247.webp",
-      link: "https://education247.com/",
-      description: "Educational exhibition event website",
-    },
-    {
-      title: "Global Study Australia",
-      image: "/global_study_uk/globalstudyaustralia.webp",
-      link: "https://globalstudyaustralia.com/",
-      description: "Study abroad consultancy for Australian universities",
-    },
-    {
-      title: "Egypt Education Fair",
-      image: "/global_study_uk/egypt_education_fair.webp",
-      link: "https://egypteducationfair.com/",
-      description: "Educational exhibition event website",
-    },
-    {
-      title: "Study Business in Germany",
-      image: "/global_study_uk/study_business_in_germany.webp",
-      link: "https://studybusinessinGermany.com/",
-      description: "Business education programs in German universities",
-    },
-    {
-      title: "Study Economics UK",
-      image: "/global_study_uk/study_economics_UK.webp",
-      link: "https://studyeconomicsintheuk.com/",
-      description: "Economics programs in UK universities",
-    },
-    {
-      title: "UCAS Clearing",
-      image: "/global_study_uk/ucas_clearing.webp",
-      link: "https://ucasclearing.com/",
-      description: "University clearing process information portal",
-    },
-    {
-      title: "Universities in Madrid",
-      image: "/global_study_uk/universities_in_madrid.webp",
-      link: "https://universitiesinmadrid.com/",
-      description: "Higher education guide for Madrid institutions",
-    },
-    {
-      title: "Universities in Leeds",
-      image: "/global_study_uk/universitiesinleeds.webp",
-      link: "https://universitiesinleeds.com/",
-      description: "University guide for Leeds area institutions",
-    },
-  ];
-
-  const totalPages = Math.ceil(projects.length / 6);
-
-  const handleSlideChange = (swiper) => {
-    setCurrentPage(swiper.activeIndex);
-  };
-
-  const handleMobileSlideChange = (swiper) => {
-    setMobileActiveIndex(swiper.activeIndex);
-  };
-
   const goToPage = (index) => {
     setCurrentPage(index);
-    if (swiperRef.current) {
-      swiperRef.current.slideTo(index);
-    }
+    swiperRef.current?.slideTo(index);
   };
 
   const goToMobileSlide = (index) => {
     setMobileActiveIndex(index);
-    if (mobileSwiperRef.current) {
-      mobileSwiperRef.current.slideTo(index);
-    }
+    mobileSwiperRef.current?.slideTo(index);
   };
-
-  // Group projects into pages of 6 for desktop Swiper
-  const projectPages = [];
-  for (let i = 0; i < projects.length; i += 6) {
-    projectPages.push(projects.slice(i, i + 6));
-  }
 
   return (
     <section id="projects" className="pt-[100px]">
@@ -106,7 +94,6 @@ export default function Projects() {
           Projects
         </h2>
 
-        {/* Mobile View: Vertical Swiper with Dots */}
         <div className="block md:hidden">
           <div className="flex gap-4 items-center">
             <Swiper
@@ -116,10 +103,10 @@ export default function Projects() {
               spaceBetween={15}
               className="h-[600px] flex-1"
               nested={true}
-              onSlideChange={handleMobileSlideChange}
+              onSlideChange={(swiper) => setMobileActiveIndex(swiper.activeIndex)}
             >
-              {projects.map((project, index) => (
-                <SwiperSlide key={index} className="!h-[190px]">
+              {projects.map((project) => (
+                <SwiperSlide key={project.link} className="!h-[190px]">
                   <a
                     href={project.link}
                     target="_blank"
@@ -138,7 +125,7 @@ export default function Projects() {
                       <h3 className="text-white font-semibold text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full w-fit">
                         {project.title}
                       </h3>
-                      <p className="text-gray-200 text-xs opacity-100 translate-y-0 md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0 transition-all duration-400">
+                      <p className="text-gray-200 text-xs opacity-100 translate-y-0 transition-all duration-400">
                         {project.description}
                       </p>
                     </div>
@@ -147,7 +134,6 @@ export default function Projects() {
               ))}
             </Swiper>
 
-            {/* Vertical dots indicator */}
             <div className="flex flex-col gap-3 justify-center py-2 pr-1">
               {Array.from({ length: projects.length - 2 }).map((_, index) => (
                 <button
@@ -165,11 +151,10 @@ export default function Projects() {
           </div>
         </div>
 
-        {/* Desktop View: Swiper Carousel */}
         <div className="hidden md:block">
           <Swiper
             onSwiper={(swiper) => (swiperRef.current = swiper)}
-            onSlideChange={handleSlideChange}
+            onSlideChange={(swiper) => setCurrentPage(swiper.activeIndex)}
             className="mb-8"
             spaceBetween={20}
             slidesPerView={1}
@@ -177,9 +162,9 @@ export default function Projects() {
             {projectPages.map((pageProjects, pageIndex) => (
               <SwiperSlide key={pageIndex}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-                  {pageProjects.map((project, index) => (
+                  {pageProjects.map((project) => (
                     <a
-                      key={index}
+                      key={project.link}
                       href={project.link}
                       target="_blank"
                       rel="noopener noreferrer"

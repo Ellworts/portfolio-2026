@@ -1,28 +1,28 @@
-export default function MyExpertise() {
-  const expertise = [
-    {
-      title: "Frontend Dev",
-      technologies: "React, NextJS",
-      description:
-        "Passionate about UI/UX. Over 2 years of development experience in HTML, CSS, JS, React and NextJS frameworks.",
-      color: "#4CAF50",
-    },
-    {
-      title: "Backend Dev",
-      technologies: "RestAPI's, mySQL",
-      description:
-        "Backend developer experienced in building REST APIs, working with databases, Node.js, and developing reliable server-side solutions.",
-      color: "#2196F3",
-    },
-    {
-      title: "Web Design",
-      technologies: "Figma",
-      description:
-        "Experience in UI/UX design, Figma and creating modern, intuitive website interfaces with a strong focus on usability and visual quality.",
-      color: "#E88D14",
-    },
-  ];
+const expertise = [
+  {
+    title: "Frontend Dev",
+    technologies: "React, NextJS",
+    description:
+      "Passionate about UI/UX. Over 2 years of development experience in HTML, CSS, JS, React and NextJS frameworks.",
+    color: "#4CAF50",
+  },
+  {
+    title: "Backend Dev",
+    technologies: "RestAPI's, mySQL",
+    description:
+      "Backend developer experienced in building REST APIs, working with databases, Node.js, and developing reliable server-side solutions.",
+    color: "#2196F3",
+  },
+  {
+    title: "Web Design",
+    technologies: "Figma",
+    description:
+      "Experience in UI/UX design, Figma and creating modern, intuitive website interfaces with a strong focus on usability and visual quality.",
+    color: "#E88D14",
+  },
+];
 
+export default function MyExpertise() {
   return (
     <section id="expertise" className="pt-[100px]">
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
@@ -30,9 +30,9 @@ export default function MyExpertise() {
           My Expertise
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {expertise.map((item, index) => (
+          {expertise.map((item) => (
             <div
-              key={index}
+              key={item.title}
               className="bg-[#2A3B44] border border-gray-700 p-6 hover:border-gray-600 transition-colors"
             >
               <h3

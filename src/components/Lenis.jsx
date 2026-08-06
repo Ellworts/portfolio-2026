@@ -16,30 +16,26 @@ export default function LenisScroll() {
       touchMultiplier: 2,
     });
 
+    let rafId;
     function raf(time) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
+    rafId = requestAnimationFrame(raf);
 
-    requestAnimationFrame(raf);
-
-    // Handle anchor link clicks with Lenis smooth scroll
     const handleAnchorClick = (e) => {
-      const target = e.target;
-      const href = target.getAttribute("href");
-
-      if (href && href.startsWith("#")) {
+      const href = e.target.getAttribute("href");
+      if (href?.startsWith("#")) {
         e.preventDefault();
         const element = document.querySelector(href);
-        if (element) {
-          lenis.scrollTo(element);
-        }
+        if (element) lenis.scrollTo(element);
       }
     };
 
     document.addEventListener("click", handleAnchorClick);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
       document.removeEventListener("click", handleAnchorClick);
     };

@@ -1,5 +1,6 @@
 import { Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "@/components/general.css";
 import Lenis from "@/components/Lenis";
 
 const geistMono = Geist_Mono({

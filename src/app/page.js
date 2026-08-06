@@ -4,7 +4,6 @@ import MyExpertise from "@/components/MyExpertise";
 import Projects from "@/components/Projects";
 import WorkExperience from "@/components/WorkExperience";
 import Contact from "@/components/Contact";
-import "../components/general.css";
 
 export default function Home() {
   return (

@@ -8,33 +8,42 @@ import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Image from "next/image";
 import Header from "./Header";
 
+const techStack = [
+  { name: "JavaScript", icon: "devicon-javascript-plain colored" },
+  { name: "TypeScript", icon: "devicon-typescript-plain colored" },
+  { name: "React", icon: "devicon-react-original colored" },
+  { name: "HTML5", icon: "devicon-html5-plain colored" },
+  { name: "CSS3", icon: "devicon-css3-plain colored" },
+  { name: "PHP", icon: "devicon-php-plain colored" },
+  { name: "Node.js", icon: "devicon-nodejs-plain colored" },
+  { name: "Next.js", icon: "devicon-nextjs-plain" },
+  { name: "Figma", icon: "devicon-figma-plain colored" },
+  { name: "Git", icon: "devicon-git-plain colored" },
+  { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
+  { name: "WordPress", icon: "devicon-wordpress-plain", color: "#21759b" },
+];
+
 export default function Hero() {
   const [isMeActive, setIsMeActive] = useState(false);
   const [displayName, setDisplayName] = useState("Mykhailo Kuptsov");
   const avatarRef = useRef(null);
 
   const handleMeClick = () => {
-    if (typeof window !== "undefined" && window.innerWidth < 768) {
-      setIsMeActive(!isMeActive);
+    if (window.innerWidth < 768) {
+      setIsMeActive((prev) => !prev);
     }
   };
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
-      if (
-        isMeActive &&
-        avatarRef.current &&
-        !avatarRef.current.contains(event.target)
-      ) {
+      if (avatarRef.current && !avatarRef.current.contains(event.target)) {
         setIsMeActive(false);
       }
     };
 
     document.addEventListener("click", handleOutsideClick);
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [isMeActive]);
+    return () => document.removeEventListener("click", handleOutsideClick);
+  }, []);
 
   useEffect(() => {
     const names = ["Mykhailo Kuptsov", "Misha ;)"];
@@ -46,59 +55,31 @@ export default function Hero() {
     const tick = () => {
       const currentName = names[nameIndex];
       if (isDeleting) {
-        // Erase characters
         setDisplayName(currentName.substring(0, index - 1));
         index--;
         if (index === 0) {
           isDeleting = false;
-          // Switch to the next name
           nameIndex = (nameIndex + 1) % names.length;
-          // Wait briefly at empty state
           timer = setTimeout(tick, 500);
           return;
         }
-        // Speed up erasing
         timer = setTimeout(tick, 60);
       } else {
-        // Type characters from the next/current name
         const nextName = names[nameIndex];
         setDisplayName(nextName.substring(0, index + 1));
         index++;
         if (index === nextName.length) {
           isDeleting = true;
-          // Hold the full name before deleting again
           timer = setTimeout(tick, 3000);
           return;
         }
-        // Normal typing speed
         timer = setTimeout(tick, 120);
       }
     };
 
-    // Start with erasing after 3 seconds of showing the name
     timer = setTimeout(tick, 3000);
-
     return () => clearTimeout(timer);
   }, []);
-
-  const techStack = [
-    { name: "JavaScript", icon: "devicon-javascript-plain colored" },
-    { name: "TypeScript", icon: "devicon-typescript-plain colored" },
-    { name: "React", icon: "devicon-react-original colored" },
-    { name: "HTML5", icon: "devicon-html5-plain colored" },
-    { name: "CSS3", icon: "devicon-css3-plain colored" },
-    { name: "PHP", icon: "devicon-php-plain colored" },
-    { name: "Node.js", icon: "devicon-nodejs-plain colored" },
-    { name: "Next.js", icon: "devicon-nextjs-plain" },
-    { name: "Figma", icon: "devicon-figma-plain colored" },
-    { name: "Git", icon: "devicon-git-plain colored" },
-    { name: "Tailwind", icon: "devicon-tailwindcss-original colored" },
-    {
-      name: "WordPress",
-      icon: "devicon-wordpress-plain",
-      customColor: "#21759b",
-    },
-  ];
 
   return (
     <section
@@ -160,16 +141,16 @@ export default function Hero() {
               }}
               className="tech-stack-swiper"
             >
-              {techStack.map((tech, index) => (
-                <SwiperSlide key={index}>
+              {techStack.map((tech) => (
+                <SwiperSlide key={tech.name}>
                   <div className="flex flex-col items-center justify-center">
                     <div className="flex h-16 w-16 items-center justify-center">
                       <i
-                        className={`${tech.icon}`}
+                        className={tech.icon}
                         style={{
                           fontSize: "64px",
                           lineHeight: 1,
-                          color: tech.customColor || undefined,
+                          color: tech.color,
                         }}
                       ></i>
                     </div>
