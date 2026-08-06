@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import MyExpertise from "@/components/MyExpertise";
@@ -10,13 +9,14 @@ import "../components/general.css";
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Header />
-      <main className="flex flex-col bg-[#22333B]">
+      <main className="relative bg-[#22333B]">
         <Hero />
-        <MyExpertise />
-        <Projects />
-        <WorkExperience />
-        <Contact />
+        <div className="relative z-20 bg-[#22333B] shadow-[0_-20px_50px_rgba(0,0,0,0.35)]">
+          <MyExpertise />
+          <Projects />
+          <WorkExperience />
+          <Contact />
+        </div>
       </main>
       <Footer />
     </div>

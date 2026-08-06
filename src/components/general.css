@@ -21,7 +21,7 @@
 .console-cursor::after {
   content: "_";
   position: absolute;
-  animation: blink-caret 0.75s step-end infinite;
+  animation: blink-caret 1.2s step-end infinite;
   margin-left: 4px;
   color: #3b82f6;
 }

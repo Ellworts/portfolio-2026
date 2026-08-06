@@ -6,6 +6,7 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Image from "next/image";
+import Header from "./Header";
 
 export default function Hero() {
   const [isMeActive, setIsMeActive] = useState(false);
@@ -102,8 +103,9 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex flex-col items-center justify-center bg-[#22333B] relative overflow-hidden -mt-16"
+      className="min-h-screen flex flex-col items-center justify-center bg-[#22333B] sticky top-0 overflow-hidden z-10"
     >
+      <Header />
       <video
         autoPlay
         loop
