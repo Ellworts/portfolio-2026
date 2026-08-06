@@ -194,8 +194,8 @@ export default function Hero() {
         onClick={handleMeClick}
         className={`absolute z-10 transition-all duration-500 group cursor-pointer md:cursor-default left-4 md:left-20 
           ${isMeActive 
-            ? "bottom-0 translate-y-0 opacity-100 md:bottom-[max(-15vh,-150px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0" 
-            : "bottom-[max(-18vh,-130px)] translate-y-0 opacity-65 md:bottom-[max(-14vh,-115px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0"
+            ? "bottom-0 translate-y-0 opacity-100 md:bottom-[max(-15vh,-145px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0" 
+            : "bottom-[max(-18vh,-125px)] translate-y-0 opacity-65 md:bottom-[max(-14vh,-112px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0"
           }`}
       >
         <div className={`absolute border border-gray-600 bg-[#22333b]/95 text-white px-4 py-3 rounded-lg shadow-lg transition-opacity duration-300 pointer-events-none w-max
@@ -214,7 +214,7 @@ export default function Hero() {
           alt="Mykhailo Kuptsov"
           width={250}
           height={250}
-          className="w-44 h-44 md:w-64 md:h-64 object-contain rounded-t-3xl transform translate-y-0 md:translate-y-[30%]"
+          className="w-44 h-44 md:w-64 md:h-64 object-contain rounded-t-3xl transform translate-y-0 md:translate-y-[29%]"
         />
       </div>
     </section>
