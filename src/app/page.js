@@ -16,6 +16,7 @@ export default function Home() {
         <MyExpertise />
         <Projects />
         <WorkExperience />
+        <Contact />
       </main>
       <Footer />
     </div>

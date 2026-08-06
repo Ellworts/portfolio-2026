@@ -9,6 +9,7 @@ import Image from "next/image";
 
 export default function Hero() {
   const [isMeActive, setIsMeActive] = useState(false);
+  const [displayName, setDisplayName] = useState("Mykhailo Kuptsov");
   const avatarRef = useRef(null);
 
   const handleMeClick = () => {
@@ -33,6 +34,51 @@ export default function Hero() {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [isMeActive]);
+
+  useEffect(() => {
+    const names = ["Mykhailo Kuptsov", "Misha ;)"];
+    let nameIndex = 0;
+    let isDeleting = true;
+    let index = names[0].length;
+    let timer;
+
+    const tick = () => {
+      const currentName = names[nameIndex];
+      if (isDeleting) {
+        // Erase characters
+        setDisplayName(currentName.substring(0, index - 1));
+        index--;
+        if (index === 0) {
+          isDeleting = false;
+          // Switch to the next name
+          nameIndex = (nameIndex + 1) % names.length;
+          // Wait briefly at empty state
+          timer = setTimeout(tick, 500);
+          return;
+        }
+        // Speed up erasing
+        timer = setTimeout(tick, 60);
+      } else {
+        // Type characters from the next/current name
+        const nextName = names[nameIndex];
+        setDisplayName(nextName.substring(0, index + 1));
+        index++;
+        if (index === nextName.length) {
+          isDeleting = true;
+          // Hold the full name before deleting again
+          timer = setTimeout(tick, 3000);
+          return;
+        }
+        // Normal typing speed
+        timer = setTimeout(tick, 120);
+      }
+    };
+
+    // Start with erasing after 3 seconds of showing the name
+    timer = setTimeout(tick, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const techStack = [
     { name: "JavaScript", icon: "devicon-javascript-plain colored" },
@@ -73,10 +119,10 @@ export default function Hero() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#22333B] to-transparent z-5"></div>
       <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-10 text-center w-full">
         <h1
-          className="font-bold text-white mt-20"
+          className="font-bold text-white mt-20 console-cursor"
           style={{ fontSize: "clamp(2.6rem, 10vw, 7.5rem)" }}
         >
-          Mykhailo Kuptsov
+          {displayName || "\u00A0"}
         </h1>
         <p
           className="text-white mb-25 max-w-3xl mx-auto"

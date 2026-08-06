@@ -156,7 +156,7 @@ export default function Projects() {
                   className={`w-3.5 h-3.5 rounded-full transition-all duration-300 cursor-pointer ${
                     mobileActiveIndex === index
                       ? "bg-blue-500 scale-125 shadow-[0_0_8px_rgba(59,130,246,0.6)]"
-                      : "bg-gray-600 hover:bg-gray-500"
+                      : "bg-gray-700 hover:bg-gray-500"
                   }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -214,7 +214,7 @@ export default function Projects() {
                 key={index}
                 onClick={() => goToPage(index)}
                 className={`w-3 h-3 rounded-full transition ${
-                  currentPage === index ? "bg-blue-500" : "bg-gray-600"
+                  currentPage === index ? "bg-blue-500" : "bg-gray-700"
                 }`}
               />
             ))}

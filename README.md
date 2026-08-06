@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🌐 Mykhailo Kuptsov - Full-Stack Web Developer Portfolio
 
-## Getting Started
+Welcome to the repository for my personal developer portfolio! This project serves as an interactive showcase of my expertise, technical skill set, and the web solutions I have designed and engineered.
 
-First, run the development server:
+🔗 **GitHub Repository:** [https://github.com/ellworts/portfolio-2026](https://github.com/ellworts/portfolio-2026)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 About This Project
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+This portfolio is crafted to provide a comprehensive overview of my capabilities as a **Full-Stack Web Developer**. It highlights my experience in constructing high-performance, accessible, and modern web applications from conceptual design through execution and deployment.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Key Highlights:
+- **Comprehensive Tech Stack Overview:** Detailed list of languages, frameworks, CMS solutions, and tools I use daily.
+- **Commercial & Personal Showcase:** Live previews, descriptions, and links to client projects.
+- **Performance & Animations:** Smooth scrolling via Lenis, interactive Swiper carousels, and responsive layouts.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Technical Skills
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### **Frontend Development**
+- **Languages & Frameworks:** JavaScript (ES6+), TypeScript, React, Next.js, HTML5, CSS3 / SCSS, Tailwind CSS
+- **CMS:** WordPress (Custom Theme Development, Gutenberg, REST API)
+- **UI/UX & Performance:** Figma design integration, Responsive Layouts, Web Performance Optimization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **Backend & Databases**
+- **Languages & Runtimes:** PHP, Node.js
+- **Databases & APIs:** MySQL, RESTful API Design & Integration
 
-## Deploy on Vercel
+### **Tools & Best Practices**
+- **Version Control & Build Tools:** Git, GitHub, npm
+- **Best Practices:** SEO Optimization, Accessibility (a11y), Clean & Semantic Code
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📬 Contact Information
+
+Feel free to reach out to discuss your project requirements or just say hello!
+
+- **Email:** [kuptsov5162@gmail.com](mailto:kuptsov5162@gmail.com)
+- **Telegram:** [t.me/dividedmeepo](https://t.me/dividedmeepo)
+- **LinkedIn:** [linkedin.com/in/ellworts](https://linkedin.com/in/ellworts)
+- **GitHub:** [github.com/ellworts](https://github.com/ellworts)
+- **Instagram:** [instagram.com/dividedmeepo](https://instagram.com/dividedmeepo)
+- **WhatsApp:** [wa.me/447767853122](https://wa.me/447767853122)
+
+---
+*Thank you for stopping by!*
