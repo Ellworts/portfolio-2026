@@ -95,7 +95,7 @@ export default function Contact() {
     <section id="contact" className="pt-[100px] pb-20">
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
         {/* Main Glassmorphic Container */}
-        <div className="bg-[#2A3B44]/45 backdrop-blur-md border border-gray-700/50 rounded-3xl p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="bg-[#2A3B44]/45 backdrop-blur-md border border-gray-700/50 rounded-[4px] p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
           
           {/* Left Column: Info & Horizontal Socials */}
           <div className="flex flex-col justify-center min-h-[300px]">
@@ -126,7 +126,7 @@ export default function Contact() {
           </div>
 
           {/* Right Column: Contact Form */}
-          <div className="bg-[#22333B]/90 border border-white/5 p-8 rounded-2xl flex flex-col justify-center">
+          <div className="bg-[#22333B]/90 border border-white/5 p-8 rounded-[4px] flex flex-col justify-center">
             <form onSubmit={handleSubmit} className="space-y-6">
               
               {/* Error alert */}
@@ -195,7 +195,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="bg-[#8CD6D0] hover:bg-[#7BC4BE] disabled:bg-gray-700 disabled:text-gray-400 text-[#12161A] font-bold px-8 py-3 rounded-lg text-sm transition-colors cursor-pointer"
+                  className="bg-[#8CD6D0] hover:bg-[#7BC4BE] disabled:bg-gray-700 disabled:text-gray-400 text-[#12161A] font-bold px-8 py-3 rounded-[4px] text-sm transition-colors cursor-pointer"
                 >
                   {loading ? "Sending..." : "Submit"}
                 </button>
@@ -208,7 +208,7 @@ export default function Contact() {
 
       {/* Floating Success Toast Popup */}
       {submitted && (
-        <div className="toast-popup bg-emerald-950/95 border border-emerald-500/40 text-white px-6 py-4 rounded-xl shadow-2xl flex items-center gap-3 backdrop-blur-sm max-w-sm">
+        <div className="toast-popup bg-emerald-950/95 border border-emerald-500/40 text-white px-6 py-4 rounded-[4px] flex items-center gap-3 backdrop-blur-sm max-w-sm">
           <div className="w-8 h-8 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 flex-shrink-0">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />

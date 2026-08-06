@@ -11,7 +11,7 @@ export default function Home() {
     <div className="min-h-screen">
       <main className="relative bg-[#22333B]">
         <Hero />
-        <div className="relative z-20 bg-[#22333B] shadow-[0_-20px_50px_rgba(0,0,0,0.35)]">
+        <div className="relative z-20 bg-[#22333B]">
           <MyExpertise />
           <Projects />
           <WorkExperience />
