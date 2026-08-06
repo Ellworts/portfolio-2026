@@ -28,8 +28,9 @@ export async function POST(req) {
         Authorization: `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        from: "Contact Form <onboarding@resend.dev>",
-        to: "kuptsov5162@gmail.com",
+        from: "onboarding@resend.dev",
+        to: "azazin1955@gmail.com",
+        reply_to: email,
         subject: `New Message from ${name} via Portfolio`,
         html: `
           <h3>New Message Received from Portfolio</h3>
