@@ -1,4 +1,5 @@
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import MyExpertise from "@/components/MyExpertise";
 import Projects from "@/components/Projects";
@@ -8,6 +9,7 @@ import Contact from "@/components/Contact";
 export default function Home() {
   return (
     <div className="min-h-screen">
+      <Header />
       <main className="relative bg-[#22333B]">
         <Hero />
         <div className="relative z-20 bg-[#22333B]">

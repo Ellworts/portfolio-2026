@@ -27,8 +27,12 @@ export default function LenisScroll() {
       const href = e.target.getAttribute("href");
       if (href?.startsWith("#")) {
         e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) lenis.scrollTo(element);
+        if (href === "#hero") {
+          lenis.scrollTo(0);
+        } else {
+          const element = document.querySelector(href);
+          if (element) lenis.scrollTo(element);
+        }
       }
     };
 

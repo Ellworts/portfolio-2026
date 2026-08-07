@@ -6,7 +6,6 @@ import { Autoplay } from "swiper/modules";
 import "swiper/css";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import Image from "next/image";
-import Header from "./Header";
 
 const techStack = [
   { name: "JavaScript", icon: "devicon-javascript-plain colored" },
@@ -86,7 +85,6 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex flex-col items-center justify-center bg-[#22333B] sticky top-0 overflow-hidden z-10"
     >
-      <Header />
       <video
         autoPlay
         loop
@@ -173,10 +171,10 @@ export default function Hero() {
       <div 
         ref={avatarRef}
         onClick={handleMeClick}
-        className={`absolute z-10 transition-all duration-500 group cursor-pointer md:cursor-default left-4 md:left-20 
+        className={`absolute z-10 transition-all duration-500 group cursor-pointer md:cursor-default left-0 md:left-20 
           ${isMeActive 
             ? "bottom-0 translate-y-0 opacity-100 md:bottom-[max(-15vh,-145px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0" 
-            : "bottom-[max(-18vh,-125px)] translate-y-0 opacity-65 md:bottom-[max(-14vh,-112px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0"
+            : "bottom-[max(-20vh,-135px)] translate-y-0 opacity-65 md:bottom-[max(-14vh,-112px)] md:hover:bottom-0 md:opacity-65 md:hover:opacity-100 md:translate-y-0"
           }`}
       >
         <div className={`absolute border border-gray-600 bg-[#22333b]/95 text-white px-4 py-3 rounded-lg shadow-lg transition-opacity duration-300 pointer-events-none w-max
