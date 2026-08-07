@@ -8,7 +8,7 @@ const experiences = [
   {
     role: "Web Developer",
     company: "Global Study UK",
-    period: "2022 - Present",
+    period: "2025 - Present",
     location: "London, UK",
     website: "https://globaleducationhub.com/",
     description:
@@ -29,7 +29,7 @@ const experiences = [
   {
     role: "Chef",
     company: "Miller & Carter",
-    period: "2020 - 2022",
+    period: "2022 - 2025",
     location: "London, UK & Didcot, UK",
     website: null,
     description:
@@ -40,7 +40,7 @@ const experiences = [
   {
     role: "Freelance Frontend Dev",
     company: "Self-employed",
-    period: "2019 - 2020",
+    period: "2022 - 2024",
     location: "Remote",
     website: null,
     description:
