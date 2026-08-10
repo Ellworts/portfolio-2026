@@ -133,7 +133,7 @@ export default function Hero() {
               centeredSlides={false}
               allowTouchMove={true}
               breakpoints={{
-                320: { slidesPerView: 3, spaceBetween: 20 },
+                320: { slidesPerView: 4, spaceBetween: 20 },
                 640: { slidesPerView: 5, spaceBetween: 30 },
                 1024: { slidesPerView: 7, spaceBetween: 40 },
               }}
@@ -142,11 +142,11 @@ export default function Hero() {
               {techStack.map((tech) => (
                 <SwiperSlide key={tech.name}>
                   <div className="flex flex-col items-center justify-center">
-                    <div className="flex h-16 w-16 items-center justify-center">
+                    <div className="flex h-12 w-12 items-center justify-center">
                       <i
                         className={tech.icon}
                         style={{
-                          fontSize: "64px",
+                          fontSize: "48px",
                           lineHeight: 1,
                           color: tech.color,
                         }}

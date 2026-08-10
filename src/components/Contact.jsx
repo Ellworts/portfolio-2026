@@ -61,9 +61,9 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="pt-[100px] pb-20">
+    <section id="contact" className="pt-[100px] pb-[100px]">
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
-        <div className="bg-[#2A3B44]/45 backdrop-blur-md border border-gray-700/50 rounded-[4px] p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-12">
+        <div className="bg-[#2A3B44]/45 backdrop-blur-md border border-gray-700/50 rounded-[4px] p-8 md:p-12 grid grid-cols-1 md:grid-cols-2 gap-8">
 
           <div className="flex flex-col justify-center min-h-[300px]">
             <div className="my-auto">
@@ -81,7 +81,9 @@ export default function Contact() {
                     href={contact.link}
                     target={contact.link.startsWith("mailto") ? "_self" : "_blank"}
                     rel={contact.link.startsWith("mailto") ? "" : "noopener noreferrer"}
-                    className="w-12 h-12 rounded-full border border-gray-700/60 bg-[#22333B]/50 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#8CD6D0] hover:bg-[#8CD6D0]/10 transition-all duration-300"
+                    className={`w-12 h-12 rounded-full border border-gray-700/60 bg-[#22333B]/50 flex items-center justify-center text-gray-400 hover:text-white hover:border-[#8CD6D0] hover:bg-[#8CD6D0]/10 transition-all duration-300 ${
+                      contact.name === "GitHub" ? "hidden md:flex" : "flex"
+                    }`}
                     title={contact.name}
                   >
                     <contact.icon />

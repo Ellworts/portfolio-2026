@@ -26,7 +26,7 @@ export default function MyExpertise() {
   return (
     <section id="expertise" className="pt-[100px]">
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
-        <h2 className="text-6xl font-bold text-white mb-8 sm:mb-12 text-center">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-12 text-center">
           My Expertise
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

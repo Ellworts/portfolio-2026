@@ -60,7 +60,7 @@ export default function WorkExperience() {
   return (
     <section id="experience" className="pt-[100px]">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10 w-full">
-        <h2 className="mb-8 sm:mb-12 text-center text-6xl font-bold text-white">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-12 text-center">
           Work Experience
         </h2>
         <div className="mx-auto space-y-3 max-w-[800px]">
@@ -102,13 +102,13 @@ export default function WorkExperience() {
                     <div className="px-6 pb-6 pt-0 md:px-8">
                       <div className="mt-5 grid gap-6 md:grid-cols-[1.6fr_0.9fr] md:items-start">
                         {exp.logo && (
-                          <div className="flex items-center justify-center p-5 md:order-2 md:min-h-[190px]">
+                          <div className="flex items-center justify-center p-5 md:order-2 md:min-h-[150px]">
                             <Image
                               src={exp.logo}
                               alt={exp.company}
-                              width={220}
-                              height={160}
-                              className="h-auto w-full max-w-[180px] object-contain"
+                              width={176}
+                              height={128}
+                              className="h-auto w-full max-w-[144px] object-contain"
                               priority={exp === experiences[0]}
                             />
                           </div>
