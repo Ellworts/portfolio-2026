@@ -60,7 +60,7 @@ export default function WorkExperience() {
   return (
     <section id="experience" className="pt-[100px]">
       <div className="mx-auto max-w-[1280px] px-5 md:px-10 w-full">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-12 text-center">
           Work Experience
         </h2>
         <div className="mx-auto space-y-3 max-w-[800px]">

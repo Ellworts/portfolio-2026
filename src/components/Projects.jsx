@@ -90,7 +90,7 @@ export default function Projects() {
   return (
     <section id="projects" className="pt-[100px]">
       <div className="max-w-7xl mx-auto px-5 md:px-10 w-full">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-8 sm:mb-12 text-center">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 sm:mb-12 text-center">
           Projects
         </h2>
 
