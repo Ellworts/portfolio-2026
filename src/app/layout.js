@@ -2,6 +2,8 @@ import { Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@/components/general.css";
 import Lenis from "@/components/Lenis";
+import { PageTransitionProvider } from "@/components/PageTransition";
+import { Analytics } from "@vercel/analytics/next";
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -23,8 +25,11 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-full flex flex-col">
-        <Lenis />
-        {children}
+        <PageTransitionProvider>
+          <Lenis />
+          {children}
+        </PageTransitionProvider>
+        <Analytics />
       </body>
     </html>
   );

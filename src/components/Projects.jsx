@@ -5,62 +5,8 @@ import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
-const projects = [
-  {
-    title: "Global Education Hub",
-    image: "/global_study_uk/Global_education_hub.webp",
-    link: "https://globaleducationhub.com/",
-    description: "Comprehensive education platform for international students",
-  },
-  {
-    title: "Education247",
-    image: "/global_study_uk/education247.webp",
-    link: "https://education247.com/",
-    description: "Educational exhibition event website",
-  },
-  {
-    title: "Global Study Australia",
-    image: "/global_study_uk/globalstudyaustralia.webp",
-    link: "https://globalstudyaustralia.com/",
-    description: "Study abroad consultancy for Australian universities",
-  },
-  {
-    title: "Egypt Education Fair",
-    image: "/global_study_uk/egypt_education_fair.webp",
-    link: "https://egypteducationfair.com/",
-    description: "Educational exhibition event website",
-  },
-  {
-    title: "Study Business in Germany",
-    image: "/global_study_uk/study_business_in_germany.webp",
-    link: "https://studybusinessinGermany.com/",
-    description: "Business education programs in German universities",
-  },
-  {
-    title: "Study Economics UK",
-    image: "/global_study_uk/study_economics_UK.webp",
-    link: "https://studyeconomicsintheuk.com/",
-    description: "Economics programs in UK universities",
-  },
-  {
-    title: "UCAS Clearing",
-    image: "/global_study_uk/ucas_clearing.webp",
-    link: "https://ucasclearing.com/",
-    description: "University clearing process information portal",
-  },
-  {
-    title: "Universities in Madrid",
-    image: "/global_study_uk/universities_in_madrid.webp",
-    link: "https://universitiesinmadrid.com/",
-    description: "Higher education guide for Madrid institutions",
-  },
-  {
-    title: "Universities in Leeds",
-    image: "/global_study_uk/universitiesinleeds.webp",
-    link: "https://universitiesinleeds.com/",
-    description: "University guide for Leeds area institutions",
-  },
-];
+import TransitionLink from "./TransitionLink";
+import { projects } from "@/data/projects";
 
 const PROJECTS_PER_PAGE = 6;
 const totalPages = Math.ceil(projects.length / PROJECTS_PER_PAGE);
@@ -69,7 +15,6 @@ const projectPages = [];
 for (let i = 0; i < projects.length; i += PROJECTS_PER_PAGE) {
   projectPages.push(projects.slice(i, i + PROJECTS_PER_PAGE));
 }
-
 
 export default function Projects() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -106,22 +51,22 @@ export default function Projects() {
               onSlideChange={(swiper) => setMobileActiveIndex(swiper.activeIndex)}
             >
               {projects.map((project) => (
-                <SwiperSlide key={project.link} className="!h-[190px]">
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="bg-[#2A3B44] overflow-hidden cursor-pointer relative group block h-full rounded-lg"
+                <SwiperSlide key={project.slug} className="!h-[190px]">
+                  <TransitionLink
+                    href={`/projects/${project.slug}`}
+                    className="bg-[#2A3B44] overflow-hidden cursor-pointer relative group block h-full rounded-[4px]"
                   >
-                    <Image
-                      src={project.image}
-                      alt={project.title}
-                      width={400}
-                      height={225}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-[#35495E]/65 pointer-events-none" />
-                    <div className="absolute inset-0 p-4 flex flex-col justify-between">
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        width={400}
+                        height={225}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-[#35495E]/65 pointer-events-none" />
+                    </div>
+                    <div className="absolute inset-0 p-4 flex flex-col justify-between z-10">
                       <h3 className="text-white font-semibold text-sm bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full w-fit">
                         {project.title}
                       </h3>
@@ -129,7 +74,7 @@ export default function Projects() {
                         {project.description}
                       </p>
                     </div>
-                  </a>
+                  </TransitionLink>
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -163,22 +108,22 @@ export default function Projects() {
               <SwiperSlide key={pageIndex}>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                   {pageProjects.map((project) => (
-                    <a
-                      key={project.link}
-                      href={project.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="bg-[#2A3B44] overflow-hidden cursor-pointer relative group block"
+                    <TransitionLink
+                      key={project.slug}
+                      href={`/projects/${project.slug}`}
+                      className="bg-[#2A3B44] overflow-hidden cursor-pointer relative group block rounded-[4px]"
                     >
-                      <Image
-                        src={project.image}
-                        alt={project.title}
-                        width={400}
-                        height={225}
-                        className="w-full aspect-video object-cover"
-                      />
-                      <div className="absolute inset-0 bg-[#35495E]/65 pointer-events-none" />
-                      <div className="absolute inset-0 p-4 flex flex-col justify-between">
+                      <div className="relative w-full aspect-video">
+                        <Image
+                          src={project.image}
+                          alt={project.title}
+                          width={400}
+                          height={225}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-[#35495E]/65 pointer-events-none" />
+                      </div>
+                      <div className="absolute inset-0 p-4 flex flex-col justify-between z-10">
                         <h3 className="text-white font-semibold text-base bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full w-fit">
                           {project.title}
                         </h3>
@@ -186,7 +131,7 @@ export default function Projects() {
                           {project.description}
                         </p>
                       </div>
-                    </a>
+                    </TransitionLink>
                   ))}
                 </div>
               </SwiperSlide>
