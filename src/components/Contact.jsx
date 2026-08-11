@@ -92,7 +92,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-
+          
           <div className="bg-[#22333B]/90 border border-white/5 p-8 rounded-[4px] flex flex-col justify-center">
             <form onSubmit={handleSubmit} className="space-y-6">
 

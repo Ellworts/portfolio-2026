@@ -68,56 +68,58 @@ export default function Header() {
   const isBlurActive = isScrolledPastHero && activeSection !== "#hero";
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-[background-color,backdrop-filter] duration-300 py-2 ${
-      isBlurActive 
-        ? "bg-[#22333B]/70 backdrop-blur-md border-b border-white/5 shadow-lg" 
-        : "bg-transparent border-b border-transparent"
-    }`}>
-      <nav className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="flex justify-end md:justify-center items-center h-16">
-          {/* Desktop Nav */}
-          <ul className="hidden md:flex space-x-8">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className={`transition-colors duration-300 font-mono ${
-                    activeSection === link.href
-                      ? "text-white"
-                      : "text-gray-400 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile Burger Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-gray-300 hover:text-white focus:outline-none z-50 relative w-8 h-8 flex flex-col justify-between p-1.5"
-            aria-label="Toggle menu"
-          >
-            <span
-              className={`h-0.5 w-full bg-current transform transition-all duration-300 origin-left ${
-                isOpen ? "rotate-45 translate-y-[2px] translate-x-[2px]" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-current transition-all duration-300 ${
-                isOpen ? "opacity-0" : ""
-              }`}
-            />
-            <span
-              className={`h-0.5 w-full bg-current transform transition-all duration-300 origin-left ${
-                isOpen ? "-rotate-45 -translate-y-[2px] translate-x-[2px]" : ""
-              }`}
-            />
-          </button>
-        </div>
-      </nav>
-
+    <>
+      <header className={`fixed top-0 left-0 w-full z-50 transition-[background-color,backdrop-filter] duration-300 py-2 ${
+        isBlurActive 
+          ? "bg-[#22333B]/70 backdrop-blur-md border-b border-white/5 shadow-lg" 
+          : "bg-transparent border-b border-transparent"
+      }`}>
+        <nav className="max-w-7xl mx-auto px-6 md:px-8">
+          <div className="flex justify-end md:justify-center items-center h-16">
+            {/* Desktop Nav */}
+            <ul className="hidden md:flex space-x-8">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className={`transition-colors duration-300 font-mono ${
+                      activeSection === link.href
+                        ? "text-white"
+                        : "text-gray-400 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+  
+            {/* Mobile Burger Button */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="md:hidden text-gray-300 hover:text-white focus:outline-none z-50 relative w-8 h-8 flex flex-col justify-between p-1.5"
+              aria-label="Toggle menu"
+            >
+              <span
+                className={`h-0.5 w-full bg-current transform transition-all duration-300 origin-left ${
+                  isOpen ? "rotate-45 translate-y-[2px] translate-x-[2px]" : ""
+                }`}
+              />
+              <span
+                className={`h-0.5 w-full bg-current transition-all duration-300 ${
+                  isOpen ? "opacity-0" : ""
+                }`}
+              />
+              <span
+                className={`h-0.5 w-full bg-current transform transition-all duration-300 origin-left ${
+                  isOpen ? "-rotate-45 -translate-y-[2px] translate-x-[2px]" : ""
+                }`}
+              />
+            </button>
+          </div>
+        </nav>
+      </header>
+  
       {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 bg-[#22333B]/98 backdrop-blur-md transition-all duration-300 z-40 md:hidden flex flex-col items-center justify-center ${
@@ -142,6 +144,6 @@ export default function Header() {
           ))}
         </ul>
       </div>
-    </header>
+    </>
   );
 }
