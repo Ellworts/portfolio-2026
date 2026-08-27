@@ -78,9 +78,30 @@ export default function WorkExperience() {
                   onClick={() => toggleExpand(experiences.indexOf(exp))}
                 >
                   <div className="min-w-0 flex-1">
-                    <h3 className="truncate text-2xl font-bold text-white">
-                      {exp.role} @ {exp.company}
-                    </h3>
+                    {isExpanded ? (
+                      <>
+                        <h3 className="hidden md:block truncate text-2xl font-bold text-white">
+                          {exp.role} @ {exp.company}
+                        </h3>
+                        <div className="md:hidden overflow-hidden marquee-mask">
+                          <div className="flex w-max animate-marquee-slow">
+                            {[0, 1, 2, 3].map((i) => (
+                              <span
+                                key={i}
+                                className="pr-10 text-2xl font-bold text-white shrink-0"
+                                aria-hidden={i > 0 ? "true" : undefined}
+                              >
+                                {exp.role} @ {exp.company}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </>
+                    ) : (
+                      <h3 className="truncate text-2xl font-bold text-white">
+                        {exp.role} @ {exp.company}
+                      </h3>
+                    )}
                     <p className="mt-1 text-sm text-white/80">{exp.period}</p>
                   </div>
                   <button
