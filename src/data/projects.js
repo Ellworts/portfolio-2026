@@ -8,7 +8,7 @@ export const projects = [
     longDescription: "A unified web platform designed to streamline the student journey from course selection to application submission. Provides interactive search tools, university profiles, and course guidance. Built with React and Next.js, incorporating custom PHP endpoints and smooth GSAP animations, with UI designed in Figma.",
     technologies: ["React", "Next.js", "GSAP", "PHP", "Tailwind CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2025",
+    year: "2026",
     client: "Global Study UK",
     category: "Educational Web Platform"
   },
@@ -21,7 +21,7 @@ export const projects = [
     longDescription: "An event and expo website built to host and manage international education fairs, student registrations, and university presentations. Features a headless WordPress backend integrated with a React frontend, interactive scheduling, and a custom Figma design.",
     technologies: ["Headless WordPress", "React", "Next.js", "REST API", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2025",
+    year: "2026",
     client: "Education247 Events",
     category: "Event Platform"
   },
@@ -34,7 +34,7 @@ export const projects = [
     longDescription: "A consultancy platform dedicated to helping international students explore degree programs, admission requirements, and visa processes for Australian institutions. Features smooth Lenis scrolling, responsive layouts, and UI/UX designed in Figma.",
     technologies: ["React", "Lenis", "REST API", "CSS Modules", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study Australia",
     category: "Educational Consultancy"
   },
@@ -47,7 +47,7 @@ export const projects = [
     longDescription: "The main corporate and admissions website for Global Study UK, guiding international students into top universities across the UK, Europe, and beyond. Built on WordPress with custom PHP functionality, Elementor, and integrated consultation forms, fully designed in Figma.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2026",
     client: "Global Study UK",
     category: "Educational Consultancy"
   },
@@ -60,7 +60,7 @@ export const projects = [
     longDescription: "An informational portal dedicated to higher education in Bath, UK. Helps students explore courses, universities, accommodation, and student life in the city. Built on WordPress with Elementor and custom styling, designed in Figma.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "City Education Guide"
   },
@@ -73,7 +73,7 @@ export const projects = [
     longDescription: "A guide for prospective international students looking to study in Switzerland, covering top universities, hospitality and business schools, tuition details, and living requirements. Built on WordPress with Elementor, custom PHP, and Figma design.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Country Education Guide"
   },
@@ -86,7 +86,7 @@ export const projects = [
     longDescription: "An educational directory and guide covering Italian universities, English-taught degree programs, application requirements, and student visas. Built using WordPress and Elementor with custom CSS and Figma designs.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Country Education Guide"
   },
@@ -99,7 +99,7 @@ export const projects = [
     longDescription: "An educational guide highlighting undergraduate and postgraduate study opportunities in Ireland, detailing universities, admission criteria, and post-study work options. Built on WordPress with Elementor, custom PHP hooks, and Figma designs.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Country Education Guide"
   },
@@ -112,7 +112,7 @@ export const projects = [
     longDescription: "A platform providing comprehensive guidance on UK university admissions, degree courses, foundation programs, and entry requirements for international students. Built on WordPress with custom styling and Figma design.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Educational Directory"
   },
@@ -125,7 +125,7 @@ export const projects = [
     longDescription: "A resource helping international and Middle Eastern students identify universities accredited and recognized by regional education ministries. Built on WordPress with custom PHP filters, Elementor, and clean Figma UI.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Accreditation Directory"
   },
@@ -138,7 +138,7 @@ export const projects = [
     longDescription: "A resource showcasing international branch campuses, local universities, and academic programs across Dubai, Abu Dhabi, and the wider UAE. Built on WordPress with Elementor, custom PHP, and Figma design.",
     technologies: ["WordPress", "PHP", "JavaScript", "Elementor", "CSS", "REST API", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Regional Education Guide"
   },
@@ -151,7 +151,7 @@ export const projects = [
     longDescription: "Official website for international education fairs in Egypt, allowing students to browse participating universities, register for exhibition events, and book consultations. Built with Next.js and Tailwind CSS with UI designed in Figma.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Event Platform"
   },
@@ -164,7 +164,7 @@ export const projects = [
     longDescription: "A specialized website focused on business and economics programs at German universities and business schools, providing information on English-taught courses, blocked accounts, and admission requirements. Built with React and Figma design.",
     technologies: ["React", "JavaScript", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2024",
+    year: "2025",
     client: "Global Study UK",
     category: "Subject Education Guide"
   },
@@ -177,7 +177,7 @@ export const projects = [
     longDescription: "A dedicated portal for students interested in studying undergraduate and postgraduate economics in the UK, comparing university rankings, course structures, and career outcomes. Built with Next.js and Figma design.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2023",
+    year: "2025",
     client: "Global Study UK",
     category: "Subject Education Guide"
   },
@@ -190,7 +190,7 @@ export const projects = [
     longDescription: "A guide helping students navigate the UCAS Clearing process to secure available university placements in the UK. Designed for quick access to course listings and advice during the admissions cycle, built with Next.js and Figma UI.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2023",
+    year: "2025",
     client: "Global Study UK",
     category: "Admissions Guide"
   },
@@ -203,7 +203,7 @@ export const projects = [
     longDescription: "A study guide exploring top public and private universities, business schools, and English-taught programs in Madrid. Features details on student living and application steps, built with React and Figma UI.",
     technologies: ["React", "JavaScript", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2023",
+    year: "2025",
     client: "Global Study UK",
     category: "City Education Guide"
   },
@@ -216,7 +216,7 @@ export const projects = [
     longDescription: "An educational guide covering higher education institutions in Leeds, UK, providing students with information on courses, campus life, accommodation, and city culture. Built with Next.js and Figma design.",
     technologies: ["Next.js", "React", "Tailwind CSS", "Figma"],
     role: "Web Developer & UI Designer",
-    year: "2023",
+    year: "2025",
     client: "Global Study UK",
     category: "City Education Guide"
   }
